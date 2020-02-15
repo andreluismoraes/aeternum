@@ -4,8 +4,6 @@ const AETERNUM = require('./controller/aeternumController')
 
 const routes = Router()
 
-routes.get('/', (req,res) =>{
-    return res.json({message: 'ola mundo'})
-})
+routes.get('/', AETERNUM.index)
 
 module.exports = routes
