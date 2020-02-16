@@ -1,4 +1,5 @@
-const AETERNUM = require('../model/aeternum')
+const AETERNUM = require('../model/aeternumModel')
+const qrcode = require('qrcode')
 
 module.exports = {
     async index(req, res){
@@ -32,6 +33,12 @@ module.exports = {
         )
 
         return res.json(aeternum)
+    },
+
+    async generateqrcode(req, res){
+
+        const qr = await qrcode.toDataURL('')
+        return res.json({message: 'qr code'})
     }
 }
 
